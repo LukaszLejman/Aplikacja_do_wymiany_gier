@@ -1,6 +1,8 @@
-<h3>Szczegóły {{game.title}}</h3>
-<p>Tytuł: {{game.title}}</p>
-<p>Data zakupu: {{game.dateOfPurchase}}</p>
-<p>Jakość: {{game.quality}}</p>
-<p>Właściciel: {{owner}}</p>
-<p>Szczegóły: {{game.details}}</p>
+<div>
+    <h3>Szczegóły {{game.title}}</h3>
+    <p>Tytuł: {{game.title}}</p>
+    <p>Data zakupu: {{game.dateOfPurchase}}</p>
+    <p>Jakość: {{game.quality}}</p>
+    <p (click)="goToUser(game)">Właściciel: {{owner}}</p>
+    <p>Szczegóły: {{game.details}}</p>
+</div>

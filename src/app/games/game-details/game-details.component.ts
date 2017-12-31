@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GamesService } from '../games.service';
 import { ISubscription } from 'rxjs/Subscription';
 
@@ -13,7 +13,8 @@ export class GameDetailsComponent implements OnInit, OnDestroy {
   private ownerSubscription: ISubscription;
   private game: any = {};
   private owner: string;
-  constructor(private activatedRoute: ActivatedRoute, private gamesService: GamesService) { }
+  private hasParams: boolean;
+  constructor(private activatedRoute: ActivatedRoute, private gamesService: GamesService, private router: Router) { }
 
   ngOnInit() {
     let gameId;
@@ -38,6 +39,10 @@ export class GameDetailsComponent implements OnInit, OnDestroy {
       this.gameSubscription.unsubscribe();
       this.ownerSubscription.unsubscribe();
     }
+  }
+
+  goToUser(gameData) {
+    this.router.navigate(['/users/user_details', gameData.ownerId]);
   }
 
 }

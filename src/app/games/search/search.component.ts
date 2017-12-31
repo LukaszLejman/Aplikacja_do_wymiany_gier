@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { GamesService } from '../games.service';
 import { ISubscription } from 'rxjs/Subscription';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -12,7 +13,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   public gameName: string = 'title';
   public path: string = 'game_details';
   private gamesSubscription: ISubscription;
-  constructor(private gamesService: GamesService) { }
+  constructor(private gamesService: GamesService, private router: Router) { }
 
   ngOnInit() {
     this.gamesSubscription = this.gamesService.getAllGames().subscribe(
@@ -27,6 +28,7 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.gamesSubscription = this.gamesService.searchGames(value.search).subscribe(
         data => {
           this.games = data;
+          this.router.navigate(['/search']);
         }
       );
     } else {
