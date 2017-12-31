@@ -1,3 +1,6 @@
 <ul *ngFor="let item of items">
-  <li>{{ item[displayProperty] }}</li>
+  <li (click)="goToDetails(item)">
+    {{ item[displayProperty] }}
+  </li>
+  <router-outlet></router-outlet>
 </ul>

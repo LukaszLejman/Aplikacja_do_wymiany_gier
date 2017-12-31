@@ -1,3 +1,12 @@
-<p>
-  user-details works!
-</p>
+<h3>Szczegóły użytkownika {{user.login}}:</h3>
+<p>Nazwa użytkownika: {{user.login}}</p>
+<p>Imię: {{user.firstName}}</p>
+<p>Nazwisko: {{user.lastName}}</p>
+<p>Gry:</p>
+<app-list-component [items]="user.games" [displayProperty]="gameName" [path]="gamesPath"></app-list-component>
+<p>Poszukiwane Gry:</p>
+<app-list-component [items]="user.searchedGames" [displayProperty]="gameName" [path]="searchedGamesPath"></app-list-component>
+<p>Komentarze profilu:</p>
+<ul *ngFor="let comment of comments">
+  <li>Ocena: {{comment.grade}} <br/> Komentarz: {{comment.comment}}</li>
+</ul>

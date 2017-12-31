@@ -26,11 +26,14 @@
         "searchedGames": [
             {
                 "id": "0",
-                "title": "game4"
+                "title": "game4",
+                "ownerId":"0"
             },
             {
                 "id": "1",
-                "title": "game5"
+                "title": "game5",
+                "ownerId": "0"
+                
             }
         ],
         "comments": [
@@ -75,11 +78,14 @@
         "searchedGames": [
             {
                 "id": "0",
-                "title": "game4"
+                "title": "game4",
+                "ownerId": "1"
+                
             },
             {
                 "id": "1",
-                "title": "game5"
+                "title": "game5",
+                "ownerId": "1"
             }
         ],
         "comments": [
@@ -124,11 +130,13 @@
         "searchedGames": [
             {
                 "id": "2",
-                "title": "game92"
+                "title": "game92",
+                "ownerId": "2"
             },
             {
                 "id": "3",
-                "title": "game555"
+                "title": "game555",
+                "ownerId": "2"
             }
         ],
         "comments": [

@@ -5,7 +5,6 @@ import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 
-
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SharedModule } from './shared/shared.module';
@@ -15,6 +14,11 @@ import { LoginService } from './login.service';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { UsersModule } from './users/users.module';
+import { MyGamesComponent } from './games/my-games/my-games.component';
+import { GameDetailsComponent } from './games/game-details/game-details.component';
+import { GamesModule } from './games/games.module';
+import { MySearchedGamesComponent } from './games/my-searched-games/my-searched-games.component';
+import { SearchedGameDetailsComponent } from './games/searched-game-details/searched-game-details.component';
 
 const routes: Array<Route> = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -22,10 +26,22 @@ const routes: Array<Route> = [
   { path: 'login', component: LoginComponent },
   {
     path: 'users', component: UsersListComponent, children: [
-      { path: ':id', component: UserDetailsComponent }
+      { path: 'user_details/:id', component: UserDetailsComponent, children: [
+        {path: 'game_details/:id', component: GameDetailsComponent},
+        { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent }
+      ] }
     ]
   },
-
+  {
+    path: 'my_games', component: MyGamesComponent, children: [
+      { path: 'game_details/:id', component: GameDetailsComponent }
+    ]
+  },
+  {
+    path: 'my_searched_games', component: MySearchedGamesComponent, children: [
+      { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent}
+    ]
+  }
 ];
 
 @NgModule({
@@ -42,7 +58,8 @@ const routes: Array<Route> = [
     HttpModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    UsersModule
+    UsersModule,
+    GamesModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
