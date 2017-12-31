@@ -24,7 +24,6 @@ export class MyGamesComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.myGamesSubscription) {
-
       this.myGamesSubscription.unsubscribe();
     }
   }

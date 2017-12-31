@@ -2,6 +2,8 @@
     <a routerLink="home" routerLinkActive="active-link">Strona główna</a>
     <a routerLink="login" routerLinkActive="active-link" *ngIf="!loginStatus">Login</a>
     <a routerLink="users" routerLinkActive="active-link">Lista użytkowników</a>
+    <a routerLink="games" routerLinkActive="active-link">Lista gier</a>
+    <a routerLink="search" routerLinkActive="active-link">Wyszukiwarka gier</a>
     <a routerLink="my_games" routerLinkActive="active-link" *ngIf="loginStatus">Moje gry</a>
     <a routerLink="my_searched_games" routerLinkActive="active-link" *ngIf="loginStatus">Gry poszukiwane przeze mnie</a>
 </div>

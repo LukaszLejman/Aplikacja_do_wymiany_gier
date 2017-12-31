@@ -19,6 +19,8 @@ import { GameDetailsComponent } from './games/game-details/game-details.componen
 import { GamesModule } from './games/games.module';
 import { MySearchedGamesComponent } from './games/my-searched-games/my-searched-games.component';
 import { SearchedGameDetailsComponent } from './games/searched-game-details/searched-game-details.component';
+import { GamesListComponent } from './games/games-list/games-list.component';
+import { SearchComponent } from './games/search/search.component';
 
 const routes: Array<Route> = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -26,10 +28,12 @@ const routes: Array<Route> = [
   { path: 'login', component: LoginComponent },
   {
     path: 'users', component: UsersListComponent, children: [
-      { path: 'user_details/:id', component: UserDetailsComponent, children: [
-        {path: 'game_details/:id', component: GameDetailsComponent},
-        { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent }
-      ] }
+      {
+        path: 'user_details/:id', component: UserDetailsComponent, children: [
+          { path: 'game_details/:id', component: GameDetailsComponent },
+          { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent }
+        ]
+      }
     ]
   },
   {
@@ -39,7 +43,17 @@ const routes: Array<Route> = [
   },
   {
     path: 'my_searched_games', component: MySearchedGamesComponent, children: [
-      { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent}
+      { path: 'searched_game_details/:id', component: SearchedGameDetailsComponent }
+    ]
+  },
+  {
+    path: 'games', component: GamesListComponent, children: [
+      { path: 'game_details/:id', component: GameDetailsComponent }
+    ]
+  },
+  {
+    path: 'search', component: SearchComponent, children: [
+      { path: 'game_details/:id', component: GameDetailsComponent }
     ]
   }
 ];

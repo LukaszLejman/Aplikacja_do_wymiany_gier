@@ -17,6 +17,36 @@ export class GamesService {
       });
   }
 
+  public getAllGames(): Observable<any> {
+    let allGames = [];
+    return this.http.get('../../assets/users.json')
+      .map((response: Response) => {
+        const array = response.json();
+        array.forEach(user => {
+          allGames = allGames.concat(user.games);
+        });
+        return allGames;
+      });
+  }
+
+  public searchGames(query: string): Observable<any> {
+    const searchResult = [];
+    return this.http.get('../../assets/users.json')
+      .map((response: Response) => {
+        const array = response.json();
+        array.forEach(user => {
+          const games = user.games;
+          games.forEach(game => {
+            const gameTitle = game.title;
+            if (gameTitle.indexOf(query) !== -1) {
+              searchResult.push(game);
+            }
+          });
+        });
+        return searchResult;
+      });
+  }
+
   public getUserSearchedGames(login: string): Observable<any> {
     return this.http.get('../../assets/users.json')
       .map((response: Response) => {

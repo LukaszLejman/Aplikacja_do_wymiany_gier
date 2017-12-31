@@ -7,14 +7,20 @@ import { MySearchedGamesComponent } from './my-searched-games/my-searched-games.
 import { SharedModule } from '../shared/shared.module';
 import { GamesService } from './games.service';
 import { SearchedGameDetailsComponent } from './searched-game-details/searched-game-details.component';
+import { SearchComponent } from './search/search.component';
+import { SearchResultComponent } from './search-result/search-result.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
-  exports: [GamesListComponent, GameDetailsComponent, MyGamesComponent, MySearchedGamesComponent],
-  declarations: [GamesListComponent, GameDetailsComponent, MyGamesComponent, MySearchedGamesComponent, SearchedGameDetailsComponent],
+  exports: [GamesListComponent, GameDetailsComponent, MyGamesComponent, MySearchedGamesComponent,
+    SearchedGameDetailsComponent, SearchComponent, SearchResultComponent],
+  declarations: [GamesListComponent, GameDetailsComponent, MyGamesComponent, MySearchedGamesComponent,
+    SearchedGameDetailsComponent, SearchComponent, SearchResultComponent],
   providers: [GamesService]
 })
 export class GamesModule { }
