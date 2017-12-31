@@ -1,0 +1,149 @@
+[
+    {
+        "id": "0",
+        "login": "user0",
+        "password": "123",
+        "firstName": "abc",
+        "lastName": "def",
+        "games": [
+            {
+                "id": "0",
+                "title": "game0",
+                "dateOfPurchase": "2000",
+                "quality": "5",
+                "ownerId": "0",
+                "details": "blablabla"
+            },
+            {
+                "id": "1",
+                "title": "game1",
+                "dateOfPurchase": "2001",
+                "quality": "3",
+                "ownerId": "0",
+                "details": "blablabla1"
+            }
+        ],
+        "searchedGames": [
+            {
+                "id": "0",
+                "title": "game4"
+            },
+            {
+                "id": "1",
+                "title": "game5"
+            }
+        ],
+        "comments": [
+            {
+                "id": "0",
+                "userID": "1",
+                "comment": "comment 0",
+                "grade": "10"
+            },
+            {
+                "id": "1",
+                "userID": "2",
+                "comment": "comment 1",
+                "grade": "9"
+            }
+        ]
+    },
+    {
+        "id": "1",
+        "login": "user1",
+        "password": "123",
+        "firstName": "asda",
+        "lastName": "dsada",
+        "games": [
+            {
+                "id": "2",
+                "title": "game2",
+                "dateOfPurchase": "2002",
+                "quality": "5",
+                "ownerId": "1",
+                "details": "blaaaablabla"
+            },
+            {
+                "id": "3",
+                "title": "game3",
+                "dateOfPurchase": "2003",
+                "quality": "3",
+                "ownerId": "1",
+                "details": "blablabla1"
+            }
+        ],
+        "searchedGames": [
+            {
+                "id": "0",
+                "title": "game4"
+            },
+            {
+                "id": "1",
+                "title": "game5"
+            }
+        ],
+        "comments": [
+            {
+                "id": "2",
+                "userID": "0",
+                "comment": "comment 2",
+                "grade": "0"
+            },
+            {
+                "id": "3",
+                "userID": "2",
+                "comment": "comment 3",
+                "grade": "1"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "login": "user2",
+        "password": "123",
+        "firstName": "aaaaabc",
+        "lastName": "deeeeeef",
+        "games": [
+            {
+                "id": "4",
+                "title": "game4",
+                "dateOfPurchase": "2001",
+                "quality": "5",
+                "ownerId": "2",
+                "details": "blablabla"
+            },
+            {
+                "id": "5",
+                "title": "game4",
+                "dateOfPurchase": "2011",
+                "quality": "3",
+                "ownerId": "2",
+                "details": "blablabla1"
+            }
+        ],
+        "searchedGames": [
+            {
+                "id": "2",
+                "title": "game92"
+            },
+            {
+                "id": "3",
+                "title": "game555"
+            }
+        ],
+        "comments": [
+            {
+                "id": "4",
+                "userID": "0",
+                "comment": "comment 4",
+                "grade": "10"
+            },
+            {
+                "id": "5",
+                "userID": "1",
+                "comment": "comment 5",
+                "grade": "9"
+            }
+        ]
+    }
+]

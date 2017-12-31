@@ -7,6 +7,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
   imports: [
     CommonModule
   ],
+  exports: [UsersListComponent, UserDetailsComponent],
   declarations: [UsersListComponent, UserDetailsComponent]
 })
 export class UsersModule { }

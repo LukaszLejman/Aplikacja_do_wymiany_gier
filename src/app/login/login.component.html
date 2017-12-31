@@ -1,0 +1,13 @@
+<h2>Logowanie</h2>
+<div *ngIf="!loginStatus">Niepoprawny login lub hasło!</div>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" method="post" ngNativeValidate>
+  <label>
+    Login:
+    <input type="text" id="username" name="username" ngModel required />
+  </label>
+  <label>
+    Hasło:
+    <input type="password" id="password" name="password" ngModel required />
+  </label>
+  <button type="submit">Zaloguj!</button>
+</form>
