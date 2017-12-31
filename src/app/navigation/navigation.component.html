@@ -6,4 +6,5 @@
     <a routerLink="search" routerLinkActive="active-link">Wyszukiwarka gier</a>
     <a routerLink="my_games" routerLinkActive="active-link" *ngIf="loginStatus">Moje gry</a>
     <a routerLink="my_searched_games" routerLinkActive="active-link" *ngIf="loginStatus">Gry poszukiwane przeze mnie</a>
+    <button (click)="logOff()" *ngIf="loginStatus">Wyloguj</button>
 </div>
